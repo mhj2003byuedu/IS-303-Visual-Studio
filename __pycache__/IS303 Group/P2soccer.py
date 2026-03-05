@@ -35,13 +35,13 @@ def menuReturn() :
 
     while True : # Defensive coding to prevent errors, and get menu choice from user
         try :
-          choice = int(input("Select a Menu Choice: "))
-          if choice not in [1, 2, 3] :
+          nChoice = int(input("Select a Menu Choice: "))
+          if nChoice not in [1, 2, 3] :
               raise Exception
           break
         except :
             print("Invalid Input, please enter 1, 2, or 3.")
-    return choice 
+    return nChoice 
 
 
 iChoice = menuReturn()
