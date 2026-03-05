@@ -1,10 +1,11 @@
 # Mo Jansson
 # - Notes for new exam
-# from datetime import datetime
+
+from datetime import datetime
 
 # raw_date = input("enter the haircut date (mm-dd-yyyy): ")
 
-# date = datetime.strptime(raw_date,"%m-%d-%Y").strptime
+# 
 
 class Stylist:
     def __init__(self, first_name, last_name):
@@ -57,3 +58,42 @@ def add_client(clients):
         except:
             print("Invalid input. Age must be a whole number")
 
+    client = Client(first_name, last_name, age)
+
+    while True:
+        try:
+            num_haircuts = int(input("How many haircuts to add: "))
+            break
+        except:
+            print("Invalid input. Must be a whole number.")
+
+    for i in range(num_haircuts):
+        print(f"\n Haircut {i +1}: ")
+        raw_date = input("Enter the haircut date (mm-dd-yyyy): ")
+        date = datetime.strptime(raw_date,"%m-%d-%Y").strptime.("%m-%d-%Y")
+
+        print("Enter haircut type: ")
+        print("1 - Normal")
+        print("2 - Special")
+        choice = input("Enter your haircut type: ")
+
+        if choice == "1":
+            haircut_type = "Normal"
+        else:
+            haircut_type = "Special"
+
+        while True:
+            try:
+                tip = float(input("Enter tip: "))
+                break
+            except:
+                print("Invalid input. Please enter a number")
+
+        print("Enter the stylist name \n")
+        stylist_first = input("Stylist first name: ")
+        stylist_last = input("Stylist last name: ")
+        stylist = Stylist(stylist_first, stylist_last)
+
+        haircut = Haircut(date, haircut_type, tip, stylist)
+
+        client.haircuts.append(haircut)
