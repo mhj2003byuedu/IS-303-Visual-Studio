@@ -85,7 +85,7 @@ def add_client(clients):
                 tip = float(input("Enter tip: "))
                 break
             except:
-                print("Invalid input. Please enter a number")
+                print("Invalid input. Tip must be a number")
 
         print("Enter the stylist name \n")
         stylist_first = input("Stylist first name: ")
@@ -94,3 +94,59 @@ def add_client(clients):
 
         haircut = Haircut(date, haircut_type, tip, stylist)
         client.haircuts.append(haircut)
+
+    clients.append(client)
+    print(f"\nClient {client.first_name} {client.last_name} added successfully!")
+
+def search_client(client):
+    print("\n -- Search for Client --")
+    first_name = input("Enter first name: ").upper()
+    last_name = input("Enter last name: ").upper()
+
+    found = None
+    for client in clients:
+        if client.first_name == first_name and client.last_name == last_name:
+            found = client
+            break
+    if found:
+        print(f"\nClient: {found.first_name} {found.last_name} | Age: {found.age}")
+        found.print_haircuts()
+    else:
+        print(f"\nNo client found with the name {first_name} {last_name}.")
+
+def stylist_totals(clients):
+    print("\n -- Stylist Totals (All Clients) --")
+    
+    totals = {}
+    for client in clients:
+        for haircut in client.haircuts:
+            stylist_name = f"{haircut.employee.first_name} {haircut.employee.last_name}"
+            if stylist_name in totals:
+                totals[stylist_name] = haircut.total_cost
+            else:
+                totals[stylist_name] += haircut.total_cost
+
+    if totals:
+        for stylist_name in totals:
+            print(f"{stylist_name}: ${totals[stylist_name]:.2f}")
+    else:
+        print("No haircut data found.")
+
+# Main program
+bContinued = True
+clients = []
+
+while bContinued:
+    choice = display_menu()
+
+    if choice == "1":
+        add_client(clients)
+    elif choice == "2":
+        search_client(clients)
+    elif choice == "3":
+        stylist_totals(clients)
+    elif choice == "4":
+        print("\nHappy Haircuts!")
+        bContinued = False
+    else:
+        print("Invalid choice. Please enter 1, 2, 3, or 4.")
