@@ -46,3 +46,14 @@ def display_menu():
     print("4 - Exit")
     return input("Choice: ")
 
+def add_client(clients):
+    print("\n -- Add Client --")
+    first_name = input("Enter the Client's first name: ")
+    last_name = input("Enter the Client's last name: ")
+    while True:
+        try:
+            age = int(input("Enter the Client's age: "))
+            break
+        except:
+            print("Invalid input. Age must be a whole number")
+
