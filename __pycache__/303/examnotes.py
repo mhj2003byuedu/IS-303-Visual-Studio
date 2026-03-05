@@ -70,7 +70,7 @@ def add_client(clients):
     for i in range(num_haircuts):
         print(f"\n Haircut {i +1}: ")
         raw_date = input("Enter the haircut date (mm-dd-yyyy): ")
-        date = datetime.strptime(raw_date,"%m-%d-%Y").strptime.("%m-%d-%Y")
+        date = datetime.strptime(raw_date, "%m-%d-%Y")
 
         print("Enter haircut type: ")
         print("1 - Normal")
