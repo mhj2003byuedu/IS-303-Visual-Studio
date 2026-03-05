@@ -26,6 +26,23 @@ sTeamName, iTotalGames = introMessage()
 # Make a dictionary of the teams the home team won or lost against
 dTeams = {"Won Against": [], "Lost Against": []}
 
+# Samson Sperry is adding menuReturn for assignment P2
+def menuReturn() :
+    print("---Menu---")
+    print(" 1 - Select/Choose Opponent ") # function #3
+    print(" 2 - Simulate a Game") # Function # 4
+    print(" 3 - Display Final Record\n") # Function #5
+
+    while True : # Defensive coding to prevent errors, and get menu choice from user
+        try :
+          Choice = int(input("Select a Menu Choice: "))
+          break
+        except :
+            print("Invalid Input, please enter 1, 2, or 3.")
+    return Choice 
+
+iChoice = menuReturn()
+
 iHomeTeamWins = 0
 iHomeTeamLosses = 0
 
