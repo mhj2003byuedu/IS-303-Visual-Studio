@@ -5,8 +5,6 @@ from datetime import datetime
 
 # raw_date = input("enter the haircut date (mm-dd-yyyy): ")
 
-# 
-
 class Stylist:
     def __init__(self, first_name, last_name):
         self.first_name = first_name.upper()
