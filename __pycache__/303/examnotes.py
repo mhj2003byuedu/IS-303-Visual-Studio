@@ -93,5 +93,4 @@ def add_client(clients):
         stylist = Stylist(stylist_first, stylist_last)
 
         haircut = Haircut(date, haircut_type, tip, stylist)
-
         client.haircuts.append(haircut)
