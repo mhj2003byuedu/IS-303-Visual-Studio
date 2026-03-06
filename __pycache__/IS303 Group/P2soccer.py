@@ -71,6 +71,21 @@ def chooseTeam(teamChoice = None) :
         print(f'- {team}')
     teamChoice = input("--")
     return teamChoice
+
+# Matthew Christensen
+# make a function (function #4) that prevents a random number generator from giving back the same number 
+# as the other team out of the two teams received
+
+def randomScores(team1,team2) :
+    while score1 == score2 :
+        score1 = random.randint(0, 3)
+        score2 = random.randint(0, 3)
+
+    if score1 > score2 :
+        return "W"
+    else :
+        return "L"
+
     
 # I'm making these into two while loops so I can put my function in between to choose the team.
 iCounter = 0
@@ -83,37 +98,42 @@ while iCounter < iTotalGames:
 
 iCounter = 0
 teamChoice = None
-while iCounter < iTotalGames:
+if iChoice == "1" :
     """
      Adding the function right here should work but there is no automation happening and is no different than 
      just hard coding the function especially since it is used once.
      what the function should do is be able to be used to get the home team name and away team name but that 
      would change the logic of the code and the other functions created by Samson and Mo.
-     it would require the sTeamName function at the startto use the function and have you choose from all
-     available teams that were entered by the user beforehand in order to automate code and save time.
+     it would require the sTeamName function at the start to use the function and have you choose from all
+     available teams that were entered by the user beforehand in order to automate code and save time. I'm not sure what 
+     the instructions want necessarily
      """
     sAwayTeam = chooseTeam(teamChoice)
     # Generate scores
-    iHomeScore = random.randint(0, 4)
-    iAwayScore = random.randint(0, 4)
+    # iHomeScore = random.randint(0, 4)
+    # iAwayScore = random.randint(0, 4)
     
     # Make sure there's no tie
-    while iHomeScore == iAwayScore:
-        iHomeScore = random.randint(0, 4)
-        iAwayScore = random.randint(0, 4)
-    
+
+    # while iHomeScore == iAwayScore:
+    #    iHomeScore = random.randint(0, 4)
+    #    iAwayScore = random.randint(0, 4)
+if iChoice == "2" :
+    sWinLoss = randomScores(sTeamName,sAwayTeam)
     # Append to dictionary and update wins/losses
-    if iHomeScore > iAwayScore:
+    if sWinLoss == "W" :
         dTeams["Won Against"].append(sAwayTeam)
         iHomeTeamWins += 1
+        print(f'The {sTeamName} won against the {sAwayTeam}')
     else:
         dTeams["Lost Against"].append(sAwayTeam)
         iHomeTeamLosses += 1
-
+        print(f'The {sTeamName} lost against the {sAwayTeam}')
+        
+    # print(f'The {sTeamName} won against the {sAwayTeam}' if iHomeScore > iAwayScore else f'The {sTeamName} lost against the {sAwayTeam}')
         # Print necessary information about the game
-    print(f"{sTeamName}'s score: {iHomeScore} - {sAwayTeam}'s score: {iAwayScore}")
-    print(f'The {sTeamName} won against the {sAwayTeam}' if iHomeScore > iAwayScore else f'The {sTeamName} lost against the {sAwayTeam}')
-    iCounter += 1
+    # print(f"{sTeamName}'s score: {iHomeScore} - {sAwayTeam}'s score: {iAwayScore}")
+    
 
 
 # After playing all the games print out: Teams won against:
