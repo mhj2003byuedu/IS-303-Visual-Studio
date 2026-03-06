@@ -62,17 +62,37 @@ iHomeTeamLosses = 0
 # not exactly sure what the instructions are saying but I'll try to automate as best as I can
 
 # the while loop will provide this function with the teams but this will display a menu to choose a team to compare
-def chooseTeam(teamChoice) :
+def chooseTeam(teamChoice = None) :
+    # display menu to choose a team from the list of teams that the user entered
+    print("\nChoose a team that your home team played against.")
+    if teamChoice in lstAwayTeams :
+        lstAwayTeams.remove(teamChoice)
+    for team in lstAwayTeams :
+        print(f'- {team}')
+    teamChoice = input("--")
+    return teamChoice
     
 # I'm making these into two while loops so I can put my function in between to choose the team.
 iCounter = 0
+lstAwayTeams = []
 while iCounter < iTotalGames:
     sAwayTeam = input(f"Enter the name of the away team for game {iCounter + 1}: ").title()
+    lstAwayTeams.append(sAwayTeam)
     iCounter += 1
 
-iCounter = 0
-while iCounter < iTotalGames:
 
+iCounter = 0
+teamChoice = None
+while iCounter < iTotalGames:
+    """
+     Adding the function right here should work but there is no automation happening and is no different than 
+     just hard coding the function especially since it is used once.
+     what the function should do is be able to be used to get the home team name and away team name but that 
+     would change the logic of the code and the other functions created by Samson and Mo.
+     it would require the sTeamName function at the startto use the function and have you choose from all
+     available teams that were entered by the user beforehand in order to automate code and save time.
+     """
+    sAwayTeam = chooseTeam(teamChoice)
     # Generate scores
     iHomeScore = random.randint(0, 4)
     iAwayScore = random.randint(0, 4)
