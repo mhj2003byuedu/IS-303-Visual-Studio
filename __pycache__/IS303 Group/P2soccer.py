@@ -1,4 +1,5 @@
 # Mo Jansson
+# Samson Sperry
 
 import random
 
