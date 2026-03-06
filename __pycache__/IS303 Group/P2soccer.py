@@ -1,5 +1,6 @@
 # Mo Jansson
 # Samson Sperry
+# Matthew Christensen
 
 import random
 
@@ -54,6 +55,10 @@ iHomeTeamLosses = 0
 # Ask about the teams they play against and randomly generate scores for games they play
 # Ensure there are no tie games using a while loop for randint generation
 # Use counter to manage number of games played
+
+# make the same function of this while loop but with a function that when called and filled with a parameter of the 
+# team that when the user selects it will remove it from the options of teams available
+# not exactly sure what the instructions are saying but I'll try to automate as best as I can
 iCounter = 0
 while iCounter < iTotalGames:
     sAwayTeam = input(f"Enter the name of the away team for game {iCounter + 1}: ").title()
