@@ -56,13 +56,23 @@ iHomeTeamLosses = 0
 # Ensure there are no tie games using a while loop for randint generation
 # Use counter to manage number of games played
 
+# Matthew Christensen is making following code(function # 3)
 # make the same function of this while loop but with a function that when called and filled with a parameter of the 
 # team that when the user selects it will remove it from the options of teams available
 # not exactly sure what the instructions are saying but I'll try to automate as best as I can
+
+# the while loop will provide this function with the teams but this will display a menu to choose a team to compare
+def chooseTeam(teamChoice) :
+    
+# I'm making these into two while loops so I can put my function in between to choose the team.
 iCounter = 0
 while iCounter < iTotalGames:
     sAwayTeam = input(f"Enter the name of the away team for game {iCounter + 1}: ").title()
-    
+    iCounter += 1
+
+iCounter = 0
+while iCounter < iTotalGames:
+
     # Generate scores
     iHomeScore = random.randint(0, 4)
     iAwayScore = random.randint(0, 4)
