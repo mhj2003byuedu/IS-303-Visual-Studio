@@ -45,7 +45,6 @@ def menuReturn() :
             print("Invalid Input, please enter 1, 2, or 3.")
     return nChoice 
 
-
 iChoice = menuReturn()
 
 iHomeTeamWins = 0
