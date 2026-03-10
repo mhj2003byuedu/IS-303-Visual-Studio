@@ -28,6 +28,7 @@ sTeamName, iTotalGames = introMessage()
 # Make a dictionary of the teams the home team won or lost against
 dTeams = {"Won Against": [], "Lost Against": []}
 
+
 # Samson Sperry is adding menuReturn for assignment P2
 def menuReturn() :
     print("---Menu---")
