@@ -29,4 +29,3 @@ print(listStudent[0][1])
 print(listStudent[1][2])
 
 listStudent.pop()
-

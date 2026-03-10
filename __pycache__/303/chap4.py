@@ -18,3 +18,5 @@ fOneAverage = (iOneSumTestScores / iOneNumberOfTests)
 fTwoAverage = (iTwoSumTestScores / iTwoNumberOfTests)
 print(f'{sNameOne} born in {iOneBirthYear} scored {iOneSumTestScores} points on {iOneNumberOfTests} tests for an average of {round(fOneAverage, 2)}')
 print(f'{sNameTwo} born in {iTwoBirthYear} scored {iTwoSumTestScores} points on {iTwoNumberOfTests} tests for an average of {round(fTwoAverage, 2)}')
+
+
